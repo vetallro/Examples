@@ -22,11 +22,11 @@ string CheckNumber (int num)
 {
     if (( num / 10000 == num % 10 ) && (( num / 1000 ) % 10) == ((num / 10 ) % 10))
     {
-        return "Да, число - полиндром.";
+        return "Да, число - палиндром.";
     }
     else
     {
-        return "Нет, число - не полиндром.";
+        return "Нет, число - не палиндром.";
     }
 }
 
@@ -49,7 +49,7 @@ do
         System.Console.WriteLine();
         System.Console.WriteLine(CheckNumber(number));
         System.Console.WriteLine();
+        Console.Beep(1000, 500);
     }
 } 
 while (set);
-
