@@ -270,6 +270,11 @@ while ( cash < flat )
     System.Console.WriteLine(flat);
     System.Console.WriteLine(count);
     System.Console.WriteLine();
-
+    if ((flat / 100 * procFlat) > (cash / 100 * procCash))
+        {
+            System.Console.WriteLine("безысходность");
+            System.Console.WriteLine();
+            return;
+        }
     count++;
 }
