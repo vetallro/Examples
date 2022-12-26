@@ -48,8 +48,7 @@ do
         set = false;
         System.Console.WriteLine();
         System.Console.WriteLine(CheckNumber(number));
-        System.Console.WriteLine();
-        Console.Beep(1000, 500);
+        System.Console.WriteLine();   
     }
 } 
 while (set);
