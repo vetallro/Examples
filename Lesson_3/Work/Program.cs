@@ -162,81 +162,106 @@
 
 
 
-//====================================================================================== 
-//
+// ====================================================================================== 
+
 // Задать N и вывести # до N елочкой 
 // пример
 // N = 2;
 //   # 
 //  ###
-//
+
 // N = 5
 //     # 
 //    ###
 //   #####
-//
+
 // N = 7
-//   #   
-//  ###  
-// ##### 
-//#######
+//    #   
+//   ###  
+//  ##### 
+// #######
 
 // Двумерный цикл 
 // Если у нас не должно быть # , то пишем пробел
-//
 
-// System.Console.Clear();
-// System.Console.WriteLine();
+int InputNumber(string message)
+{
+    System.Console.Write(message);
+    int num = Convert.ToInt32(Console.ReadLine());
+    return num;
+}
 
-// int InputNumber(string message)
-// {
-//     System.Console.Write(message);
-//     int num = Convert.ToInt32(Console.ReadLine());
-//     return num;
-// }
+bool Check (int weight)
+{
+    if (weight % 2 == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 
-// int numb = InputNumber("Введите число N (нечетное): ");
+void OddTree (int number)
+{
+    int x = (number + 1)/2;
+    for ( int i = 1; i <= x; i++ )
+    {
+        for ( int j = 1; j <= (x - i); j++)
+        {
+            Console.Write(" ");
+        }
 
-// bool Check (int weight)
-// {
-//     if (weight % 2 == 0)
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
+        for ( int j = 1; j <= (2*i-1); j++)
+        {
+            Console.Write("*");
+        }
 
-// if (Check(numb))
-// {
-//     Console.WriteLine();
-//     Console.WriteLine("Число четное!");
-//     Console.WriteLine();
-// }
-// else
-// {
-//     int x = (numb + 1)/2;
-//     for ( int i = 1; i <= x; i++ )
-//     {
-//         for ( int j = 1; j <= (x - i); j++)
-//         {
-//             Console.Write(" ");
-//         }
+        for ( int j = 1; j <= (x - i); j++)
+        {
+            Console.Write(" ");
+        }
+    Console.WriteLine();
+    }
+}
 
-//         for ( int j = 1; j <= (2*i-1); j++)
-//         {
-//             Console.Write("*");
-//         }
+void EvenTree (int number)
+{
+    int x = (number)/2;
+    for ( int i = 1; i <= x; i++ )
+    {
+        for ( int j = 1; j <= (x - i); j++)
+        {
+            Console.Write(" ");
+        }
 
-//         for ( int j = 1; j <= (x - i); j++)
-//         {
-//             Console.Write(" ");
-//         }
-//     Console.WriteLine();
-//     }
-// }
+        for ( int j = 1; j <= (2*i); j++)
+        {
+            Console.Write("#");
+        }
+
+        for ( int j = 1; j <= (x - i); j++)
+        {
+            Console.Write(" ");
+        }
+    Console.WriteLine();
+    }
+}
+
+System.Console.Clear();
+System.Console.WriteLine();
+
+int numb = InputNumber("Введите число N: ");
+
+if (Check(numb))
+{
+    EvenTree(numb);
+}
+else
+{
+    OddTree(numb);
+}
 
 //======================================================================================
 //
@@ -244,37 +269,37 @@
 // через сколько лет у нас получится купить квартиру за K $ , при том , что цена квартиры также растет на Q % 
 // если этот процент больше или равен N , то вывести в консоль безысходность 
 
-System.Console.Clear();
-System.Console.WriteLine();
+// System.Console.Clear();
+// System.Console.WriteLine();
 
-double InputNumber(string message)
-{
-    System.Console.Write(message);
-    double num = Convert.ToDouble(Console.ReadLine());
-    return num;
-}
+// double InputNumber(string message)
+// {
+//     System.Console.Write(message);
+//     double num = Convert.ToDouble(Console.ReadLine());
+//     return num;
+// }
 
-double cash = InputNumber("Введите сумму cash: ");
-double flat = InputNumber("Введите сумму квартиры: ");
-double procCash = InputNumber("Введите процент в банке: ");
-double procFlat = InputNumber("Введите процент дорожания квартиры: ");
+// double cash = InputNumber("Введите сумму cash: ");
+// double flat = InputNumber("Введите сумму квартиры: ");
+// double procCash = InputNumber("Введите процент в банке: ");
+// double procFlat = InputNumber("Введите процент дорожания квартиры: ");
 
-int count = 1;
+// int count = 1;
 
-while ( cash < flat )
-{
-    cash = cash + cash / 100 * procCash;
-    flat = flat + flat / 100 * procFlat;
+// while ( cash < flat )
+// {
+//     cash = cash + cash / 100 * procCash;
+//     flat = flat + flat / 100 * procFlat;
 
-    System.Console.WriteLine(cash);
-    System.Console.WriteLine(flat);
-    System.Console.WriteLine(count);
-    System.Console.WriteLine();
-    if ((flat / 100 * procFlat) > (cash / 100 * procCash))
-        {
-            System.Console.WriteLine("безысходность");
-            System.Console.WriteLine();
-            return;
-        }
-    count++;
-}
+//     System.Console.WriteLine(cash);
+//     System.Console.WriteLine(flat);
+//     System.Console.WriteLine(count);
+//     System.Console.WriteLine();
+//     if ((flat / 100 * procFlat) > (cash / 100 * procCash))
+//         {
+//             System.Console.WriteLine("безысходность");
+//             System.Console.WriteLine();
+//             return;
+//         }
+//     count++;
+// }
