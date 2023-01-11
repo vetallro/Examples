@@ -23,14 +23,14 @@ void SelectionSort( int[] coll )
 {
     for (int i = 0; i < coll.Length; i++)
     {
-        int minPosition = i;
+        //int minPosition = i;
         for (int j = i + 1; j < coll.Length; j++)
         {
-            if ( coll[j] < coll[minPosition] )
+            if ( coll[j] < coll[i] )
                 {
                     int temp = coll[j];
-                    coll[j] = coll[minPosition];
-                    coll[minPosition] = temp;
+                    coll[j] = coll[i];
+                    coll[i] = temp;
                 }
         }
     }
