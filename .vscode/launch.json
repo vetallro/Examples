@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Lesson_5/Work/bin/Debug/net7.0/Work.dll",
+            "program": "${workspaceFolder}/Lecture_4/Work/bin/Debug/net7.0/Work.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Lesson_5/Work",
+            "cwd": "${workspaceFolder}/Lecture_4/Work",
             "console": "internalConsole",
             "stopAtEntry": false
         },
