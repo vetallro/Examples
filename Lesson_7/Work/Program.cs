@@ -201,6 +201,71 @@
 // б) элементы, расположенные в правом нижнем и левом верхнем углах.
 
 
+// void FillArray2D ( int [,] array2D )
+// {
+//     Random rnd = new Random();
+//     for (var i = 0; i < array2D.GetLength(0); i++)
+//     {
+//         for (var j = 0; j < array2D.GetLength(1); j++)
+//         {
+//             array2D[ i, j ] = rnd.Next(0, 10);
+//         }
+//     }
+
+// }
+
+// void PrintArray2D ( int [,] array2D )
+// {
+//     for (var i = 0; i < array2D.GetLength(0); i++)
+//     {
+//         for (var j = 0; j < array2D.GetLength(1); j++)
+//         {
+//             System.Console.Write(array2D[ i, j ] + " ");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// void CrossNumbersRightUpLeftDown ( int [,] array2D )
+// {
+//     int temp = array2D [0, array2D.GetLength(1)-1];
+//     array2D [0, array2D.GetLength(1)-1] = array2D[array2D.GetLength(0)-1, 0];
+//     array2D [array2D.GetLength(0)-1, 0] = temp;
+// }
+
+// void CrossNumbersRightDownLeftUp ( int [,] array2D )
+// {
+//     int temp = array2D[array2D.GetLength(0)-1, array2D.GetLength(1)-1];
+//     array2D[array2D.GetLength(0)-1, array2D.GetLength(1)-1] = array2D[0, 0];
+//     array2D[0, 0] = temp;
+// }
+
+// int rows = 5;
+// int columns = 5;
+
+// int [,] arrayNew = new int [ rows, columns ];
+
+// PrintArray2D (arrayNew);
+// FillArray2D (arrayNew);
+// System.Console.WriteLine();
+// PrintArray2D (arrayNew);
+// CrossNumbersRightUpLeftDown(arrayNew);
+// CrossNumbersRightDownLeftUp(arrayNew);
+
+// System.Console.WriteLine();
+// PrintArray2D (arrayNew);
+// System.Console.WriteLine();
+
+//
+//--------------------------------------------------------------------------------
+//
+
+// Дан двумерный массив. Составить программу:
+// а) расчета суммы двух любых элементов второй строки массива;
+// б) расчета произведения двух любых элементов пятого столбца массива.
+// Сложить все элементы выше главной диаганали
+
+
 void FillArray2D ( int [,] array2D )
 {
     Random rnd = new Random();
@@ -226,38 +291,47 @@ void PrintArray2D ( int [,] array2D )
     }
 }
 
-void CrossNumbersRightUpLeftDown ( int [,] array2D )
+void RandomSum ( int [,] array2D, int numberRow )
 {
-    int temp = array2D [0, array2D.GetLength(1)-1];
-    array2D [0, array2D.GetLength(1)-1] = array2D[array2D.GetLength(0)-1, 0];
-    array2D [array2D.GetLength(0)-1, 0] = temp;
+    Random rnd = new Random();
+    int i = numberRow-1;
+    int j1 = rnd.Next(0, array2D.GetLength(1)-1);
+    int j2 = rnd.Next(0, array2D.GetLength(1)-1);
+    System.Console.WriteLine($"Сумма двух любых значений {numberRow} строки:");
+    System.Console.WriteLine($"Первое значение [{i}, {j1}] - {array2D[i, j1]}");
+    System.Console.WriteLine($"Второе значение [{i}, {j2}] - {array2D[i, j2]}");
+    System.Console.WriteLine("Сумма равна " + (array2D[i, j1] + array2D[i, j2]));
+    System.Console.WriteLine();
 }
 
-void CrossNumbersRightDownLeftUp ( int [,] array2D )
+void RandomMulti ( int [,] array2D, int numberColumn )
 {
-    int temp = array2D[array2D.GetLength(0)-1, array2D.GetLength(1)-1];
-    array2D[array2D.GetLength(0)-1, array2D.GetLength(1)-1] = array2D[0, 0];
-    array2D[0, 0] = temp;
+    Random rnd = new Random();
+    int i1 = rnd.Next(0, array2D.GetLength(0)-1);
+    int i2 = rnd.Next(0, array2D.GetLength(0)-1);
+    int j = numberColumn-1;
+    System.Console.WriteLine($"Произведение двух любых значений {numberColumn} столбца:");
+    System.Console.WriteLine($"Первое значение [{i1}, {j}] - {array2D[i1, j]}");
+    System.Console.WriteLine($"Второе значение [{i2}, {j}] - {array2D[i2, j]}");
+    System.Console.WriteLine("Произведение равно " + (array2D[i1, j] * array2D[i2, j]));
+    System.Console.WriteLine();
 }
+
+
 
 int rows = 5;
 int columns = 5;
-
 int [,] arrayNew = new int [ rows, columns ];
+int rowForSum = 2;
+int columnForMulti = 5;
 
-PrintArray2D (arrayNew);
+System.Console.WriteLine();
+
 FillArray2D (arrayNew);
-System.Console.WriteLine();
-PrintArray2D (arrayNew);
-CrossNumbersRightUpLeftDown(arrayNew);
-CrossNumbersRightDownLeftUp(arrayNew);
-
-System.Console.WriteLine();
 PrintArray2D (arrayNew);
 System.Console.WriteLine();
 
-//
-//--------------------------------------------------------------------------------
-//
+RandomSum( arrayNew, rowForSum );
+RandomMulti( arrayNew, columnForMulti );
 
-
+System.Console.WriteLine();
