@@ -1,7 +1,7 @@
 {
-    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
-    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
-    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Lecture_4/Work/bin/Debug/net7.0/Work.dll",
+            "program": "${workspaceFolder}/Lesson_7/Task_52/bin/Debug/net7.0/Task_52.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Lecture_4/Work",
+            "cwd": "${workspaceFolder}/Lesson_7/Task_52",
             "console": "internalConsole",
             "stopAtEntry": false
         },
