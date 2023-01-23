@@ -43,15 +43,15 @@ void PrintArray2D(double[,] array2D)
 
 void AverageInArrayAndPrint(double[,] array2D)
 {
-    for (var i = 0; i < array2D.GetLength(0); i++)
+    for (var j = 0; j < array2D.GetLength(1); j++)
     {
         double sum = 0;
-        for (var j = 0; j < array2D.GetLength(1); j++)
+        for (var i = 0; i < array2D.GetLength(0); i++)
         {
             sum += array2D[i, j];
         }
-        double average = sum / array2D.GetLength(1);
-        System.Console.WriteLine("Среднее по " + (i + 1) + " строке равно - " + Math.Round(average, 1));
+        double average = sum / array2D.GetLength(0);
+        System.Console.WriteLine("Среднее по " + (j + 1) + " столбцу равно - " + Math.Round(average, 1));
     }
 }
 
