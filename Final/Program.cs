@@ -4,6 +4,19 @@
 // ["1234", "1567", "-2", "computer science"] => ["-2"]
 // [Russia, "Denmark", "Kazan"] => []
 
+int NewArrayLength(string[] array, int numb)
+{
+    int count = 0;
+    for (var i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= numb)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
 void RewriteArray(string[] array, string[] newArray, int numb)
 {
     int count = 0;
@@ -21,15 +34,15 @@ void PrintArray ( string [] array )
 {
     for (var i = 0; i < array.Length; i++)
     {
-        System.Console.Write(array[i] + " ");
+        System.Console.Write(array[i] + ", ");
     }
 }
 
-// string[] source = { "hello", "2", "world", ":-)" };
- string[] source = {"1234", "1567", "-2", "computer science"};
+string[] source = { "hello", "2", "world", ":-)" };
+// string[] source = {"1234", "1567", "-2", "computer science"};
 // string[] source = {Russia, "Denmark", "Kazan"};
 int numb = 3;
-string[] newSource = new string[source.Length];
+string[] newSource = new string[NewArrayLength(source, numb)];
 
 RewriteArray(source, newSource, numb);
 PrintArray(newSource);
